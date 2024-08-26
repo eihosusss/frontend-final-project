@@ -1,11 +1,11 @@
-import logo from './Assets/Logo.svg';
+import logoFooter from './Assets/logo-footer.png';
 
 function Footer() {
     return (
         <footer>
             <div className="footer-container">
                 <div className="footer-logo">
-                    <img src={logo} alt="Little Lemon Logo" />
+                    <img src={logoFooter} alt="Little Lemon Footer Logo" />
                 </div>
 
                 <div className="footer-nav">
