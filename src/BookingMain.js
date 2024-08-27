@@ -1,24 +1,28 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect, useState } from 'react';
 import BookingForm from './BookingForm';
 
 // Initialize times (this function will later be used with useReducer)
-const initializeTimes = () => [
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-];
+export const initializeTimes = () => {
+    const today = new Date().toISOString().split('T')[0];
+    return window.fetchAPI(today); // Use the global fetchAPI function
+};
 
 // Update times (this will update the available times based on the selected date)
-const updateTimes = (state, action) => {
-    // For now, we return the same available times regardless of the date
-    return initializeTimes();
+export const updateTimes = (state, action) => {
+    if (action.type === 'UPDATE_TIMES') {
+        return window.fetchAPI(action.date); // Fetch the available times for the selected date
+    }
+    return state;
 };
 
 function BookingMain() {
     const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+    const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
+
+    useEffect(() => {
+        // Fetch times when the component mounts or date changes
+        dispatch({ type: 'UPDATE_TIMES', date: selectedDate });
+    }, [selectedDate]);
 
     return (
         <div>
