@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import BookingPage from './pages/BookingPage';
+import BookingConformationPage from './pages/BookingConformationPage';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <h1>Login</h1>,
+  },
+  {
+    path: "/reservations-conformation",
+    element: <BookingConformationPage />,
   },
 ]);
 
