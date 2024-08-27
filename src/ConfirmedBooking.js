@@ -1,6 +1,14 @@
+import Conformation from './Assets/booking-confirmed.png'
+
 function ConfirmedBooking () {
     return (
-        <h1>Reservation Confirmed</h1>
+        <div style={{ width: '100%', overflow: 'hidden' }}>
+            <img
+                src={Conformation}
+                alt="Conformation"
+                style={{ width: '100%', height: 'auto' }}
+            />
+        </div>
     );
 }
 

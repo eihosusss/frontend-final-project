@@ -33,7 +33,6 @@ test('updateTimes returns the updated times based on the date', () => {
     expect(updatedState).toEqual(expectedTimes);
 });
 
-// HTML5 Validation Tests
 describe('BookingForm HTML5 Validation', () => {
     test('date input has required attribute', () => {
         render(<BookingForm availableTimes={[]} dispatch={() => {}} submitForm={() => {}} />);
@@ -62,28 +61,23 @@ describe('BookingForm HTML5 Validation', () => {
     });
 });
 
-// JavaScript Validation Tests
 describe('BookingForm JavaScript Validation', () => {
     test('valid form should enable submit button', () => {
         render(<BookingForm availableTimes={['17:00']} dispatch={() => {}} submitForm={() => {}} />);
 
-        // Fill out the form with valid inputs
         fireEvent.change(screen.getByLabelText(/choose date/i), { target: { value: '2024-08-27' } });
         fireEvent.change(screen.getByLabelText(/choose time/i), { target: { value: '17:00' } });
         fireEvent.change(screen.getByLabelText(/number of guests/i), { target: { value: '1' } });
         fireEvent.change(screen.getByLabelText(/occasion/i), { target: { value: 'Birthday' } });
 
-        // Check if submit button is enabled
         expect(screen.getByText(/make your reservation/i)).not.toBeDisabled();
     });
 
     test('invalid form should disable submit button', () => {
         render(<BookingForm availableTimes={['17:00']} dispatch={() => {}} submitForm={() => {}} />);
 
-        // Leave the form in an invalid state (e.g., guests < 1)
         fireEvent.change(screen.getByLabelText(/number of guests/i), { target: { value: '0' } });
 
-        // Check if submit button is disabled
         expect(screen.getByText(/make your reservation/i)).toBeDisabled();
     });
 });

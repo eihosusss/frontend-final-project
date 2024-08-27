@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import AboutPage from './pages/AboutPage';
+import MenuPage from './pages/MenuPage';
 import BookingPage from './pages/BookingPage';
 import BookingConformationPage from './pages/BookingConformationPage';
+import OrderOnlinePage from './pages/OrderOnlinePage';
+import LoginPage from './pages/LoginPage';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -17,11 +21,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/about",
-    element: <h1>About Us</h1>,
+    element: <AboutPage />,
   },
   {
     path: "/menu",
-    element: <h1>Our Menu</h1>,
+    element: <MenuPage />,
   },
   {
     path: "/reservations",
@@ -29,11 +33,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/order-online",
-    element: <h1>Order Online</h1>,
+    element: <OrderOnlinePage />,
   },
   {
     path: "/login",
-    element: <h1>Login</h1>,
+    element: <LoginPage />,
   },
   {
     path: "/reservations-confirmation",

@@ -1,15 +1,21 @@
-/* App.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Section */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px; /* Adjust padding as needed */
-  background-color: #fff; /* Optional: Set a background color */
-  border-bottom: 1px solid #ddd; /* Optional: Add a bottom border for separation */
+  padding: 0 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
 }
 
 header img {
-  height: 50px; /* Adjust size as needed */
+  height: 50px;
 }
 
 nav ul {
@@ -20,17 +26,17 @@ nav ul {
 }
 
 nav ul li {
-  margin-left: 20px; /* Adjust spacing between links as needed */
+  margin-left: 20px;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #000; /* Adjust color as needed */
-  font-weight: bold; /* Optional: Make the text bold */
+  color: #000;
+  font-weight: bold;
 }
 
 nav ul li a:hover {
-  text-decoration: underline; /* Optional: Add underline on hover */
+  text-decoration: underline;
 }
 
 /* Main Section */
@@ -43,14 +49,36 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #495e57; /* Dark background color */
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(to bottom, #495e57 90%, #fff 10%);
   padding: 50px;
+  overflow: hidden;
 }
 
 .hero-content {
   max-width: 50%;
+  z-index: 1;
+  position: relative;
 }
 
+.hero-image {
+  position: absolute;
+  right: 15%;
+  top: 5%;
+  bottom: 2%;
+  width: 25%;
+  z-index: 0;
+}
+
+.hero-image img {
+  width: auto;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Hero Text */
 .hero-content h1 {
   font-family: 'Markazi Text', serif;
   font-weight: 500;
@@ -92,13 +120,7 @@ main {
 }
 
 .hero-content button:hover {
-  background-color: #E3BA11; /* Darker shade on hover */
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
+  background-color: #E3BA11;
 }
 
 /* Specials Section */
@@ -142,6 +164,7 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -150,6 +173,7 @@ main {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: calc(33.333% - 13.333px);
+  min-width: 280px;
 }
 
 .card img {
@@ -200,6 +224,10 @@ main {
   object-fit: contain;
 }
 
+.specials-cards-button {
+  cursor: pointer;
+}
+
 /* Testimonials Section */
 .testimonials {
   background-color: #EDEFEE;
@@ -219,6 +247,7 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .testimonial-cards .card {
@@ -227,6 +256,7 @@ main {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: calc(33.333% - 13.333px);
+  min-width: 280px;
 }
 
 .rating h2 {
@@ -254,8 +284,7 @@ main {
 .user-info img {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
+  border-radius: 0 0 0 0;
 }
 
 .testimonial-cards p {
@@ -273,10 +302,13 @@ main {
   align-items: center;
   padding: 40px 20px;
   background-color: #fff;
+  flex-wrap: wrap;
 }
 
 .about-text {
   max-width: 50%;
+  min-width: 280px;
+  margin-bottom: 20px;
 }
 
 .about-text h1 {
@@ -305,6 +337,7 @@ main {
 
 .about-images {
   max-width: 50%;
+  min-width: 280px;
   text-align: center;
 }
 
@@ -314,55 +347,138 @@ main {
   border-radius: 16px;
 }
 
-
-/* Footer Styling */
+/* Footer Section */
 footer {
-  background-color: #f8f8f8; /* Light background color */
-  padding: 20px 0; /* Top and bottom padding */
-  border-top: 1px solid #ddd; /* Optional: Add a top border for separation */
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
-  align-items: start; /* Align items to the top */
-  padding: 0 20px; /* Padding on left and right */
-  max-width: 1200px; /* Optional: Set a max-width for better readability */
-  margin: 0 auto; /* Center align the footer container */
+  align-items: start;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .footer-logo img {
   padding-top: 15px;
-  height: 150px; /* Adjust logo size as needed */
+  height: 150px;
 }
 
 .footer-nav, .footer-contact, .footer-social {
-  flex: 1; /* Each section takes equal space */
-  margin: 0 20px; /* Space between sections */
+  flex: 1;
+  margin: 0 20px;
+  min-width: 200px;
 }
 
 .footer-nav h4, .footer-contact h4, .footer-social h4 {
-  margin-bottom: 10px; /* Space below headings */
+  margin-bottom: 10px;
 }
 
 .footer-nav ul, .footer-social ul {
-  list-style-type: none; /* Remove default list styles */
+  list-style-type: none;
   padding: 0;
 }
 
 .footer-nav ul li, .footer-social ul li {
-  margin-bottom: 8px; /* Space between list items */
+  margin-bottom: 8px;
 }
 
 .footer-nav a, .footer-social a {
-  text-decoration: none; /* Remove underline from links */
-  color: #333; /* Text color */
+  text-decoration: none;
+  color: #333;
 }
 
 .footer-nav a:hover, .footer-social a:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
 }
 
 .footer-contact p {
-  margin: 5px 0; /* Space between contact details */
+  margin: 5px 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  /* Header Mobile */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  /* Hero Section Mobile */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    height: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 48pt;
+  }
+
+  .hero-content h2 {
+    font-size: 32pt;
+  }
+
+  .hero-image {
+    position: relative;
+    width: 80%;
+    margin-top: 20px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  /* Specials and About Sections Mobile */
+  .specials-cards,
+  .testimonial-cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .about-text,
+  .about-images {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Footer Mobile */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-nav,
+  .footer-contact,
+  .footer-social {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
 }

@@ -21,22 +21,22 @@ function Footer() {
                     </ul>
                 </div>
 
-                <div className="footer-contact">
-                    <h4>Contact</h4>
-                    <p>Address: 1234 Lemon St, Citrus City, CA 90210</p>
-                    <p>Phone: 555-555-5555</p>
-                    <p>Email: info@littlelemon.com</p>
-                </div>
-
                 <div className="footer-social">
                     <h4>Social Media</h4>
                     <ul>
-                        <li><a href="#facebook">Facebook</a></li>
-                        <li><a href="#instagram">Instagram</a></li>
-                        <li><a href="#youtube">YouTube</a></li>
-                        <li><a href="#tiktok">TikTok</a></li>
-                        <li><a href="#x">X (formerly Twitter)</a></li>
+                        <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+                        <li><a href="https://www.tiktok.com" target="_blank">TikTok</a></li>
+                        <li><a href="https://x.com" target="_blank">X (formerly Twitter)</a></li>
                     </ul>
+                </div>
+
+                <div className="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Address: 1234 Lemon St, Chicago, IL 12345</p>
+                    <p>Phone: 555-555-5555</p>
+                    <p>Email: info@littlelemon.com</p>
                 </div>
             </div>
         </footer>
