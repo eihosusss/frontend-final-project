@@ -36,7 +36,7 @@ const router = createBrowserRouter([
     element: <h1>Login</h1>,
   },
   {
-    path: "/reservations-conformation",
+    path: "/reservations-confirmation",
     element: <BookingConformationPage />,
   },
 ]);

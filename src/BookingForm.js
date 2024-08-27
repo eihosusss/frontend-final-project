@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitForm }) {
     const [date, setDate] = useState('');
     const [time, setTime] = useState('17:00');
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState('Birthday');
-
-    //const updateTimes = (state, action) => {
-        // To update
-        // To update
-        //return initializeTimes();
-    //};
 
     // Handle date change and dispatch the action
     const handleDateChange = (e) => {
@@ -22,7 +16,8 @@ function BookingForm({ availableTimes, dispatch }) {
     // Handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log({
+        // Call submitForm function with formData
+        submitForm({
             date,
             time,
             guests,
@@ -63,7 +58,7 @@ function BookingForm({ availableTimes, dispatch }) {
                 min="1"
                 max="10"
                 value={guests}
-                onChange={(e) => setGuests(e.target.value)}
+                onChange={(e) => setGuests(Number(e.target.value))}
                 required
             />
 
