@@ -6,23 +6,20 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState('Birthday');
 
-    // Handle date change and dispatch the action
+    // Determine if the form is valid
+    const isFormValid = () => {
+        return date && time && guests >= 1 && guests <= 10 && occasion;
+    };
+
     const handleDateChange = (e) => {
         const selectedDate = e.target.value;
         setDate(selectedDate);
         dispatch({ type: 'UPDATE_TIMES', date: selectedDate });
     };
 
-    // Handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Call submitForm function with formData
-        submitForm({
-            date,
-            time,
-            guests,
-            occasion,
-        });
+        submitForm({ date, time, guests, occasion });
     };
 
     return (
@@ -76,6 +73,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             <input
                 type="submit"
                 value="Make Your Reservation"
+                disabled={!isFormValid()}
             />
         </form>
     );
